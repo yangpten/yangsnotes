@@ -5,10 +5,10 @@ export default function Home() {
         <h1 className="text-4xl font-bold mb-6">Yang&apos;s Notes</h1>
         
         <div className="text-gray-700 mb-8 leading-relaxed">
-          <p className="mb-2">Hey 👋 I'm Yang,</p>
-          <p className="mb-2">I'm currently focused on building <a href="https://www.dumplingai.com" className="text-blue-600 hover:text-blue-800 underline font-medium">DumplingAI</a>.</p>
+          <p className="mb-2">Hey 👋 I&apos;m Yang,</p>
+          <p className="mb-2">I&apos;m currently focused on building <a href="https://www.dumplingai.com" className="text-blue-600 hover:text-blue-800 underline font-medium">DumplingAI</a>.</p>
           <p className="mb-2">Previously, I worked in roles across finance, strategy, and product at Macquarie, L.E.K., Rokt, and Checkbox.</p>
-          <p className="mb-2">I'm a self-taught developer and have been building things on the internet for as long as I can remember.</p>
+          <p className="mb-2">I&apos;m a self-taught developer and have been building things on the internet for as long as I can remember.</p>
           <p className="mb-2">My content is usually about AI, growth, dev workflows, and startups.</p>
           <p className="mb-2">I studied law at the University of Sydney and even got qualified as a lawyer, but never practiced.</p>
         </div>
