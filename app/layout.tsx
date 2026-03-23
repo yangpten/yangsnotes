@@ -12,7 +12,10 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL;
+
 export const metadata: Metadata = {
+  metadataBase: siteUrl ? new URL(siteUrl) : undefined,
   title: "Yang's Notes",
   description: "Founder of DumplingAI. Content about AI, dev workflows, growth, and startups.",
   keywords: ["AI", "development", "startups", "growth", "workflows"],
