@@ -1,7 +1,6 @@
 import GitHubContributionGrid from "@/components/github-contribution-grid";
 
 const socialLinks = [
-  { href: "https://github.com/yangpten", label: "GitHub @yangpten" },
   { href: "https://x.com/yangpten", label: "X (Twitter) @yangpten" },
   { href: "https://www.youtube.com/@yangpten", label: "YouTube @yangpten" },
   { href: "https://www.tiktok.com/@yangpten", label: "TikTok @yangpten" },
@@ -9,6 +8,7 @@ const socialLinks = [
     href: "https://yangsnewsletter.substack.com/",
     label: "Substack newsletter",
   },
+  { href: "https://github.com/yangpten", label: "GitHub @yangpten" },
 ];
 
 export default function Home() {
@@ -27,7 +27,7 @@ export default function Home() {
                 href="https://www.dumplingai.com"
                 className="font-medium text-blue-600 underline hover:text-blue-800"
               >
-                <strong>DumplingAI</strong>
+                DumplingAI
               </a>{" "}
               and worked in roles across finance, strategy, and product at
               Macquarie, L.E.K.,

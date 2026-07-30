@@ -43,7 +43,10 @@ export default async function GitHubContributionGrid() {
   if (!response.ok) return null;
 
   const data = (await response.json()) as { contributions?: Contribution[] };
-  const contributions = data.contributions ?? [];
+  const today = new Date().toISOString().slice(0, 10);
+  const contributions = (data.contributions ?? []).filter(
+    (contribution) => contribution.date <= today,
+  );
 
   if (!contributions.length) return null;
 
@@ -73,16 +76,24 @@ export default async function GitHubContributionGrid() {
             {weeks.map((week, weekIndex) => (
               <div key={weekIndex} className="flex flex-col gap-1">
                 {week.map((day, dayIndex) => (
-                  <div
-                    key={day?.date ?? `empty-${weekIndex}-${dayIndex}`}
-                    title={day ? `${day.count} contributions on ${day.date}` : undefined}
-                    className="h-2.5 w-2.5 rounded-[2px]"
-                    style={{
-                      backgroundColor: day
-                        ? ["#ebedf0", "#c6e48b", "#7bc96f", "#239a3b", "#196127"][day.level]
-                        : "transparent",
-                    }}
-                  />
+                  <div key={day?.date ?? `empty-${weekIndex}-${dayIndex}`} className="group relative">
+                    <div
+                      aria-label={
+                        day ? `${day.count} contributions on ${day.date}` : undefined
+                      }
+                      className="h-2.5 w-2.5 rounded-[2px]"
+                      style={{
+                        backgroundColor: day
+                          ? ["#ebedf0", "#c6e48b", "#7bc96f", "#239a3b", "#196127"][day.level]
+                          : "transparent",
+                      }}
+                    />
+                    {day && (
+                      <span className="pointer-events-none absolute bottom-full left-1/2 z-10 mb-2 hidden -translate-x-1/2 whitespace-nowrap rounded-md bg-gray-900 px-2 py-1 text-xs text-white shadow-sm group-hover:block">
+                        {day.count} contributions on {day.date}
+                      </span>
+                    )}
+                  </div>
                 ))}
               </div>
             ))}
