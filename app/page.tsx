@@ -1,15 +1,16 @@
 import Link from "next/link";
+import GitHubContributionGrid from "@/components/github-contribution-grid";
 import { formatNoteDate, notes } from "@/lib/notes";
 
 const introParagraphs = [
   "Hey 👋 I'm Yang,",
-  "Previously, I worked in roles across finance, strategy, and product at Macquarie, L.E.K., Rokt, and Checkbox.",
   "I'm a self-taught developer and have been building things on the internet for as long as I can remember.",
-  "My content is usually about AI, growth, dev workflows, or startups.",
+  "I usually post about AI, growth, dev workflows, or startups.",
   "I studied law at the University of Sydney and even got admitted as a lawyer, but never practiced.",
 ];
 
 const socialLinks = [
+  { href: "https://github.com/yangpten", label: "GitHub @yangpten" },
   { href: "https://x.com/yangpten", label: "X (Twitter) @yangpten" },
   { href: "https://www.youtube.com/@yangpten", label: "YouTube @yangpten" },
   { href: "https://www.tiktok.com/@yangpten", label: "TikTok @yangpten" },
@@ -27,14 +28,19 @@ export default function Home() {
           <div className="space-y-2 text-gray-700">
             <p className="mb-2">{introParagraphs[0]}</p>
             <p className="mb-2">
-              I&apos;m currently focused on building{" "}
+              I&apos;m currently focused on building consumer software.
+            </p>
+            <p className="mb-2">
+              Previously, I built{" "}
               <a
                 href="https://www.dumplingai.com"
                 className="font-medium text-blue-600 underline hover:text-blue-800"
               >
-                DumplingAI
-              </a>
-              .
+                <strong>DumplingAI</strong>
+              </a>{" "}
+              and worked in
+              roles across finance, strategy, and product at Macquarie, L.E.K.,
+              Rokt, and Checkbox.
             </p>
             {introParagraphs.slice(1).map((paragraph) => (
               <p key={paragraph} className="mb-2">
@@ -56,6 +62,8 @@ export default function Home() {
               </a>
             ))}
           </div>
+
+          <GitHubContributionGrid />
         </section>
 
         <section className="border-t border-gray-200 pt-10">
