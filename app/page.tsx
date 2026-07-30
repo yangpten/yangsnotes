@@ -1,13 +1,4 @@
-import Link from "next/link";
 import GitHubContributionGrid from "@/components/github-contribution-grid";
-import { formatNoteDate, notes } from "@/lib/notes";
-
-const introParagraphs = [
-  "Hey 👋 I'm Yang,",
-  "I'm a self-taught developer and have been building things on the internet for as long as I can remember.",
-  "I usually post about AI, growth, dev workflows, or startups.",
-  "I studied law at the University of Sydney and even got admitted as a lawyer, but never practiced.",
-];
 
 const socialLinks = [
   { href: "https://github.com/yangpten", label: "GitHub @yangpten" },
@@ -26,7 +17,7 @@ export default function Home() {
       <div className="mx-auto max-w-2xl space-y-14">
         <section className="space-y-8">
           <div className="space-y-2 text-gray-700">
-            <p className="mb-2">{introParagraphs[0]}</p>
+            <p className="mb-2">Hey 👋 I&apos;m Yang,</p>
             <p className="mb-2">
               I&apos;m currently focused on building consumer software.
             </p>
@@ -38,15 +29,22 @@ export default function Home() {
               >
                 <strong>DumplingAI</strong>
               </a>{" "}
-              and worked in
-              roles across finance, strategy, and product at Macquarie, L.E.K.,
+              and worked in roles across finance, strategy, and product at
+              Macquarie, L.E.K.,
               Rokt, and Checkbox.
             </p>
-            {introParagraphs.slice(1).map((paragraph) => (
-              <p key={paragraph} className="mb-2">
-                {paragraph}
-              </p>
-            ))}
+            <p className="mb-2">
+              I&apos;m a self-taught developer and have been building things on
+              the internet for as long as I can remember.
+            </p>
+            <p className="mb-2">
+              I studied law at the University of Sydney and even got admitted
+              as a lawyer, but never practiced.
+            </p>
+            <p className="mb-2">
+              If you follow me, expect posts about AI, growth, dev workflows,
+              or startups.
+            </p>
           </div>
 
           <div className="flex flex-col space-y-2">
@@ -66,36 +64,6 @@ export default function Home() {
           <GitHubContributionGrid />
         </section>
 
-        <section className="border-t border-gray-200 pt-10">
-          <div className="space-y-6">
-            <p className="text-xs uppercase tracking-[0.24em] text-gray-500">
-              Notes
-            </p>
-
-            <div className="space-y-5">
-              {notes.map((note) => (
-                <article key={note.slug} className="space-y-2">
-                  <p className="text-sm text-gray-500">
-                    <time dateTime={note.publishedAt}>
-                      {formatNoteDate(note.publishedAt)}
-                    </time>
-                  </p>
-                  <h2 className="text-2xl font-semibold tracking-tight text-gray-900">
-                    <Link
-                      href={note.href}
-                      className="underline decoration-gray-300 underline-offset-4 transition hover:decoration-gray-900"
-                    >
-                      {note.title}
-                    </Link>
-                  </h2>
-                  <p className="max-w-xl leading-7 text-gray-700">
-                    {note.description}
-                  </p>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
       </div>
     </main>
   );

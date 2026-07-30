@@ -4,7 +4,7 @@ type Contribution = {
   level: number;
 };
 
-const contributionApi = "https://github-contributions-api.jogruber.de/v4/yangpten";
+const contributionApi = "https://github-contributions-api.jogruber.de/v4/yangpten?y=last";
 
 function getCurrentStreak(contributions: Contribution[]) {
   let streak = 0;
