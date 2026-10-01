@@ -1,3 +1,4 @@
+import CurrentlyBased from "@/components/currently-based";
 import GitHubContributionGrid from "@/components/github-contribution-grid";
 
 const socialLinks = [
@@ -60,6 +61,8 @@ export default function Home() {
               </a>
             ))}
           </div>
+
+          <CurrentlyBased />
 
           <GitHubContributionGrid />
         </section>
